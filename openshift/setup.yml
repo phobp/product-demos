@@ -6,14 +6,14 @@ controller_components:
 controller_credentials:
   - name: OpenShift
     organization: Default
-    credential_type: kubernetes_bearer_token
+    credential_type: OpenShift or Kubernetes API Bearer Token
     inputs:
       hosts: CHANGEME
       bearer_token: CHANGEME
       verify_ssl: false
 
 controller_templates:
-  - name: OPENSHIFT / Dev Spaces
+  - name: OpenShift / Dev Spaces
     job_type: run
     inventory: "Workshop Inventory"
     project: "Ansible official demo project"
