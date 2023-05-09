@@ -29,6 +29,27 @@
             source: redhat-operators
             sourceNamespace: openshift-marketplace
 
+    - name: wait for dev spaces operator to install
+      k8s_info:
+        api_version: apiextensions.k8s.io/v1
+        kind: CustomResourceDefinition
+        name: checlusters.org.eclipse.che
+      register: crd_che
+      until: crd_che.resources | list | length == 1
+      retries: 10
+      delay: 30
+
+    - name: Wait until devspaces-operator is up
+      k8s_info:
+        api_version: v1
+        kind: Deployment
+        name: devspaces-operator
+        namespace: openshift-operators
+      register: pod_list
+      until: pod_list|json_query('resources[*].status.readyReplicas')|unique == [1]
+      retries: 10
+      delay: 30
+
     - name: deploy dev spaces
       redhat.openshift.k8s:
         state: present
