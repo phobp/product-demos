@@ -4,7 +4,7 @@ metadata:
 components:
   - name: product-demos-ee
     container:
-      image: quay.io/acme_corp/product-demos-ee:latest
+      image: quay.io/ansible/creator-ee:latest
       memoryRequest: 256M
       memoryLimit: 5Gi
       cpuRequest: 250m
