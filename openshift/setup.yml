@@ -8,7 +8,7 @@ controller_credentials:
     organization: Default
     credential_type: OpenShift or Kubernetes API Bearer Token
     inputs:
-      hosts: CHANGEME
+      host: CHANGEME
       bearer_token: CHANGEME
       verify_ssl: false
 
