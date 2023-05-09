@@ -1,0 +1,12 @@
+schemaVersion: 2.2.0
+metadata:
+  name: ansible-demo
+components:
+  - name: product-demos-ee
+    container:
+      image: quay.io/acme_corp/product-demos-ee:latest
+      memoryRequest: 256M
+      memoryLimit: 5Gi
+      cpuRequest: 250m
+      cpuLimit: 2000m
+      args: ['tail', '-f', '/dev/null']
