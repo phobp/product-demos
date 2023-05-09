@@ -21,7 +21,7 @@
             labels:
               operators.coreos.com/devspaces.openshift-operators: ''
             name: devspaces
-            namespace: openshift-operators
+            namespace: eclipse-che
           spec:
             channel: stable
             installPlanApproval: Automatic
