@@ -14,7 +14,7 @@
     - name: create dev spaces subscription
       redhat.openshift.k8s:
         state: present
-        definition: 
+        definition:
           apiVersion: operators.coreos.com/v1alpha1
           kind: Subscription
           metadata:
