@@ -11,7 +11,7 @@
         kind: Namespace
         state: present
 
-    - name: create deve spaces subscription
+    - name: create dev spaces subscription
       redhat.openshift.k8s:
         state: present
         definition: 

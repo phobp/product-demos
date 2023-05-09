@@ -1,0 +1,25 @@
+---
+controller_components:
+  - credentials
+  - job_templates
+
+controller_credentials:
+  - name: OpenShift
+    organization: Default
+    credential_type: kubernetes_bearer_token
+    inputs:
+      hosts: CHANGEME
+      bearer_token: CHANGEME
+      verify_ssl: false
+
+controller_templates:
+  - name: OPENSHIFT / Dev Spaces
+    job_type: run
+    inventory: "Workshop Inventory"
+    project: "Ansible official demo project"
+    playbook: "openshift/devspaces.yml"
+    notification_templates_started: Telemetry
+    notification_templates_success: Telemetry
+    notification_templates_error: Telemetry
+    credentials:
+      - "OpenShift"
