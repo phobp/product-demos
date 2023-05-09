@@ -21,12 +21,12 @@
             labels:
               operators.coreos.com/devspaces.openshift-operators: ''
             name: devspaces
-            namespace: eclipse-che
+            namespace: openshift-operators
           spec:
             channel: stable
             installPlanApproval: Automatic
             name: devspaces
-            source: redhat-operators-index
+            source: redhat-operators
             sourceNamespace: openshift-marketplace
 
     - name: deploy dev spaces
