@@ -1,13 +1,11 @@
 ---
 - name: Deploy Dev Spaces on OCP
   hosts: localhost
-  vars:
-    namespce: eclipse-che
 
   tasks:
     - name: create namespace
       redhat.openshift.k8s:
-        name: "{{ namespace }}"
+        name: eclipse-che
         api_version: v1
         kind: Namespace
         state: present
@@ -20,7 +18,7 @@
           kind: CheCluster
           metadata:
             name: devspaces
-            namespace: "{{ namespace }}"
+            namespace: eclipse-che
           spec:
             components:
               cheServer:
