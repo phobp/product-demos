@@ -4,8 +4,7 @@ metadata:
 components:
   - name: product-demos-ee
     container:
-      #image: quay.io/mloriedo/ansible-creator-ee:latest # workaround for https://github.com/eclipse/che/issues/21778
-      image: quay.io/acme_corp/product-demos-ee
+      image: quay.io/mloriedo/ansible-creator-ee:latest # workaround for https://github.com/eclipse/che/issues/21778
       memoryRequest: 256M
       memoryLimit: 5Gi
       cpuRequest: 250m
